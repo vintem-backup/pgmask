@@ -3,6 +3,7 @@ Pipfile.lock
 poetry.lock
 jupyterlog
 *.ipynb
+.vscode
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
