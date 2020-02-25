@@ -71,20 +71,19 @@ class DataframeLayer: #TODO: Docstrings and Type annotations
                                                      inplace=False, kind='quicksort',
                                                      na_position='last', ignore_index=True)
 
-            return dataframe
+        return dataframe
 
 
     def save_df_into_db(self, table_name, dataframe_in, if_exists='replace', **kwargs):
 
-        column_for_index = kwargs.get('column_for_index'); index = None
+        index_ = None; index = kwargs.get('index')
+        if(index): index_ = index
         engine = create_engine('postgresql+psycopg2://{}:{}@{}:{}/{}'.\
                                format(self.DB_USER, self.DB_PASSWORD, self.DB_HOST,
                                       self.DB_PORT, self.DB_NAME))
-
-        if(column_for_index): index = column_for_index
         try:
 
             dataframe_in.to_sql(table_name, con=engine, schema=None, if_exists=if_exists, index = False,
-                                index_label=index, chunksize=None, dtype=None, method=None)
+                                index_label=index_, chunksize=None, dtype=None, method=None)
 
         except Exception as err: pass #TODO: tratar exceção aqui
