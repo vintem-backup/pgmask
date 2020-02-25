@@ -1,6 +1,8 @@
 #Dev stuff
 Pipfile.lock
 poetry.lock
+jupyterlog
+*.ipynb
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
