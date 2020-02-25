@@ -1,8 +1,19 @@
 [tool.poetry]
 name = "pgmask"
 version = "0.1.0"
-description = ""
+description = "A abstraction to handle of postgres database"
 authors = ["marcusmello <mandealista@gmail.com>"]
+
+license = "MIT"
+readme = "README.md"
+homepage = "https://gitlab.com/vintem/pgmask"
+repository = "https://gitlab.com/vintem/pgmask"
+keywords = ["postgres", "dataframe", "sql"]
+
+include = [
+    "LICENSE",
+]
+
 
 [tool.poetry.dependencies]
 python = "^3.8"
